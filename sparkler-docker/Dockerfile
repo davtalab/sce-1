@@ -54,7 +54,7 @@ RUN apt-get -y install lsof
 RUN /data/solr/bin/solr start && \
     /data/solr/bin/solr create_core -c crawldb -d /data/sparkler/conf/solr/crawldb/ && \
     /data/solr/bin/solr stop
-RUN cd /data/sparkler/sparkler-ui/banana && \
+RUN mkdir /data/sparkler/sparkler-ui/banana && cd /data/sparkler/sparkler-ui/banana && \
     git submodule init && \
     git submodule update && \
     cd /data/sparkler/sparkler-ui/ && mvn clean package
